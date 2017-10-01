@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.16
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rat App", "Rat App\Rat App.csproj", "{77F630BD-0B12-448A-910E-C81EA27872E1}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Auth0.OidcClient.Shared", "..\..\..\Development\auth0-oidc-client-net\src\Auth0.OidcClient.Shared\Auth0.OidcClient.Shared.shproj", "{5D8121D2-4ED5-41B9-8B89-8A5CA8E851BA}"
+EndProject
+Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		..\..\..\Development\auth0-oidc-client-net\src\Auth0.OidcClient.Shared\Auth0.OidcClient.Shared.projitems*{5d8121d2-4ed5-41b9-8b89-8a5ca8e851ba}*SharedItemsImports = 13
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|ARM = Debug|ARM
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|ARM = Release|ARM
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{77F630BD-0B12-448A-910E-C81EA27872E1}.Debug|ARM.ActiveCfg = Debug|ARM
+		{77F630BD-0B12-448A-910E-C81EA27872E1}.Debug|ARM.Build.0 = Debug|ARM
+		{77F630BD-0B12-448A-910E-C81EA27872E1}.Debug|ARM.Deploy.0 = Debug|ARM
+		{77F630BD-0B12-448A-910E-C81EA27872E1}.Debug|x64.ActiveCfg = Debug|x64
+		{77F630BD-0B12-448A-910E-C81EA27872E1}.Debug|x64.Build.0 = Debug|x64
+		{77F630BD-0B12-448A-910E-C81EA27872E1}.Debug|x64.Deploy.0 = Debug|x64
+		{77F630BD-0B12-448A-910E-C81EA27872E1}.Debug|x86.ActiveCfg = Debug|x86
+		{77F630BD-0B12-448A-910E-C81EA27872E1}.Debug|x86.Build.0 = Debug|x86
+		{77F630BD-0B12-448A-910E-C81EA27872E1}.Debug|x86.Deploy.0 = Debug|x86
+		{77F630BD-0B12-448A-910E-C81EA27872E1}.Release|ARM.ActiveCfg = Release|ARM
+		{77F630BD-0B12-448A-910E-C81EA27872E1}.Release|ARM.Build.0 = Release|ARM
+		{77F630BD-0B12-448A-910E-C81EA27872E1}.Release|ARM.Deploy.0 = Release|ARM
+		{77F630BD-0B12-448A-910E-C81EA27872E1}.Release|x64.ActiveCfg = Release|x64
+		{77F630BD-0B12-448A-910E-C81EA27872E1}.Release|x64.Build.0 = Release|x64
+		{77F630BD-0B12-448A-910E-C81EA27872E1}.Release|x64.Deploy.0 = Release|x64
+		{77F630BD-0B12-448A-910E-C81EA27872E1}.Release|x86.ActiveCfg = Release|x86
+		{77F630BD-0B12-448A-910E-C81EA27872E1}.Release|x86.Build.0 = Release|x86
+		{77F630BD-0B12-448A-910E-C81EA27872E1}.Release|x86.Deploy.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {18463854-37F0-47A8-A6EE-D30A9E0296CF}
+	EndGlobalSection
+EndGlobal
