@@ -101,6 +101,9 @@
     </Compile>
     <Compile Include="RatApp.cs" />
     <Compile Include="Model\User.cs" />
+    <Compile Include="View\SightingPage.xaml.cs">
+      <DependentUpon>SightingPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\WelcomePage.xaml.cs">
       <DependentUpon>WelcomePage.xaml</DependentUpon>
     </Compile>
@@ -129,6 +132,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Page Include="View\MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SightingPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -14,6 +14,8 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Newtonsoft.Json;
+using System.Diagnostics;
+using Rat_App.View;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -32,6 +34,7 @@ namespace Rat_App
 
         private async void PopulateListView()
         {
+            progressRingSightings.IsActive = true;
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create("http://muffindreamers.azurewebsites.net/sightings");
             request.ContentType = "application/json";
 
@@ -41,6 +44,8 @@ namespace Rat_App
             {
                 sightings = Sighting.FromJson(reader.ReadToEnd());
             }
+
+            progressRingSightings.IsActive = false;
 
             foreach(Sighting s in sightings)
             {
@@ -68,6 +73,13 @@ namespace Rat_App
         private void buttonMap_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void listViewSightings_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Sighting sighting = (Sighting)e.ClickedItem;
+
+            Frame.Navigate(typeof(SightingPage), sighting);
         }
     }
 }

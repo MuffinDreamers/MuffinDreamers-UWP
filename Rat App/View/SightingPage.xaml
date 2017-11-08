@@ -1,0 +1,46 @@
+﻿<Page
+    x:Class="Rat_App.View.SightingPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Rat_App.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <x:String x:Key="idPreText">Rat Identification Number:&#160;</x:String>
+        <x:String x:Key="locationTypePreText">Location Type:&#160;</x:String>
+        <x:String x:Key="boroughPreText">Borough Location:&#160;</x:String>
+        <x:String x:Key="zipcodePreText">Zipcode:&#160;</x:String>
+        <x:String x:Key="streetAddressPreText">Street Address:&#160;</x:String>
+        <x:String x:Key="cityPreText">City Location:&#160;</x:String>
+        <x:String x:Key="latitudePreText">Latitude:&#160;</x:String>
+        <x:String x:Key="longitudePreText">Longitude:&#160;</x:String>
+        <x:String x:Key="dateCreatedPreText">Date Created:&#160;</x:String>
+    </Page.Resources>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock x:Name="textId" HorizontalAlignment="Center" FontFamily="Roboto" Text="{StaticResource idPreText}" Grid.Row="0" VerticalAlignment="Center"/>
+        <TextBlock x:Name="textLocationType" HorizontalAlignment="Center" FontFamily="Roboto" Text="{StaticResource locationTypePreText}" Grid.Row="1" VerticalAlignment="Center"/>
+        <TextBlock x:Name="textBorough" HorizontalAlignment="Center" FontFamily="Roboto" Text="{StaticResource boroughPreText}" Grid.Row="2" VerticalAlignment="Center"/>
+        <TextBlock x:Name="textZipcode" HorizontalAlignment="Center" FontFamily="Roboto" Text="{StaticResource zipcodePreText}" Grid.Row="3" VerticalAlignment="Center"/>
+        <TextBlock x:Name="textStreetAddress" HorizontalAlignment="Center" FontFamily="Roboto" Text="{StaticResource streetAddressPreText}" Grid.Row="4" VerticalAlignment="Center"/>
+        <TextBlock x:Name="textCity" HorizontalAlignment="Center" FontFamily="Roboto" Text="{StaticResource cityPreText}" Grid.Row="5" VerticalAlignment="Center"/>
+        <TextBlock x:Name="textLatitude" HorizontalAlignment="Center" FontFamily="Roboto" Text="{StaticResource latitudePreText}" Grid.Row="6" VerticalAlignment="Center"/>
+        <TextBlock x:Name="textLongitude" HorizontalAlignment="Center" FontFamily="Roboto" Text="{StaticResource longitudePreText}" Grid.Row="7" VerticalAlignment="Center"/>
+        <TextBlock x:Name="textDateCreated" HorizontalAlignment="Center" FontFamily="Roboto" Text="{StaticResource dateCreatedPreText}" Grid.Row="8" VerticalAlignment="Center"/>
+        <Button x:Name="buttonBack" HorizontalAlignment="Center" FontFamily="Roboto" Content="Return" Grid.Row="9" Click="buttonBack_Click"/>
+    </Grid>
+</Page>
