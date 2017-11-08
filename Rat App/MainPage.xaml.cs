@@ -33,5 +33,20 @@ namespace Rat_App
             if(success)
                 Frame.Navigate(typeof(WelcomePage));
         }
+
+        private void buttonAddNew_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void buttonGraph_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void buttonMap_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -7,9 +7,32 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBlock x:Name="textWelcome" HorizontalAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" Text="Welcome back" VerticalAlignment="Center"/>
-        <Button x:Name="buttonLogout" Content="Logout" HorizontalAlignment="Right" Margin="0,10,10,0" VerticalAlignment="Top" Click="buttonLogout_Click"/>
+    <Page.Resources>
+        <x:Double x:Key="buttonWidth">100</x:Double>
+    </Page.Resources>
 
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="100"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <ListView x:Name="listViewSightings" Grid.Row="0"/>
+        <Grid Grid.Row="1" VerticalAlignment="Bottom">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="buttonLogout" Content="Logout" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" FontFamily="Roboto" Width="{StaticResource buttonWidth}" Margin="10" Click="buttonLogout_Click"/>
+            <Button x:Name="buttonAddNew" Content="Add New" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" FontFamily="Roboto" Width="{StaticResource buttonWidth}" Margin="10" Click="buttonAddNew_Click"/>
+            <Button x:Name="buttonGraph" Content="To Graph" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" FontFamily="Roboto" Width="{StaticResource buttonWidth}" Margin="10" Click="buttonGraph_Click"/>
+            <Button x:Name="buttonMap" Content="To Map" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" FontFamily="Roboto" Width="{StaticResource buttonWidth}" Margin="10" Click="buttonMap_Click"/>
+        </Grid>
     </Grid>
 </Page>

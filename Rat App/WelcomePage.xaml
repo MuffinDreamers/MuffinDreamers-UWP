@@ -7,9 +7,9 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Button x:Name="buttonLogin" Content="Login/Register" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" Width="250" Height="73" FontSize="24" Click="buttonLogin_Click"/>
-        <TextBlock HorizontalAlignment="Center" Margin="0,75,0,0" TextWrapping="Wrap" Text="Welcome" VerticalAlignment="Top" FontSize="72"/>
-
-    </Grid>
+    <RelativePanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Button RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True" x:Name="buttonLogin" Content="GET STARTED!" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,24" Click="buttonLogin_Click" FontFamily="Roboto"/>
+        <TextBlock x:Name="textWelcome" RelativePanel.Above="buttonLogin" HorizontalAlignment="Center" Margin="0,0,0,87" TextWrapping="Wrap" Text="Report and browse rat sightings posted in your area!" FontSize="14" Height="19" VerticalAlignment="Bottom" Padding="0" RelativePanel.AlignHorizontalCenterWithPanel="True"/>
+        <Image RelativePanel.Above="textWelcome" HorizontalAlignment="Center" VerticalAlignment="Center" Source="logo.png" Width="358" Margin="0" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignTopWithPanel="True"/>
+    </RelativePanel>
 </Page>

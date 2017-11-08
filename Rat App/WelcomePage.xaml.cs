@@ -13,6 +13,9 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using System.Diagnostics;
+using Windows.Foundation.Metadata;
+using Windows.UI.ViewManagement;
+using Windows.UI;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -26,6 +29,18 @@ namespace Rat_App
         public WelcomePage()
         {
             this.InitializeComponent();
+
+            if(ApiInformation.IsTypePresent("Windows.UI.ViewManagement.StatusBar"))
+            {
+                StatusBar bar = StatusBar.GetForCurrentView();
+
+                if(bar != null)
+                {
+                    bar.BackgroundOpacity = 1;
+                    bar.BackgroundColor = Color.FromArgb(255, 0, 121, 107);
+                    bar.ForegroundColor = Colors.White;
+                }
+            }
         }
 
         private async void buttonLogin_Click(object sender, RoutedEventArgs e)
