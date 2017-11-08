@@ -19,7 +19,7 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <ListView x:Name="listViewSightings" Grid.Row="0"/>
+        <ListView x:Name="listViewSightings" Grid.Row="0" FontFamily="Roboto" FontSize="20"/>
         <Grid Grid.Row="1" VerticalAlignment="Bottom">
             <Grid.RowDefinitions>
                 <RowDefinition/>
