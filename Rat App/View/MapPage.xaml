@@ -23,7 +23,7 @@
             </Grid.ColumnDefinitions>
             <CalendarDatePicker x:Name="datePickerStartDate" Grid.Column="0" HorizontalAlignment="Stretch" Margin="10,0" FontFamily="Roboto" PlaceholderText="Start Date" DateChanged="DateChanged"/>
             <CalendarDatePicker x:Name="datePickerEndDate" Grid.Column="1" HorizontalAlignment="Stretch" Margin="10,0" FontFamily="Roboto" PlaceholderText="End Date" DateChanged="DateChanged"/>
-            <Button x:Name="buttonReturn" Grid.Column="2" Content="Return" HorizontalAlignment="Center" FontFamily="Roboto" Margin="10,0" Click="buttonReturn_Click"/>
+            <Button x:Name="buttonReturn" Grid.Column="2" Content="Back" HorizontalAlignment="Center" FontFamily="Roboto" Margin="10,0" Click="buttonReturn_Click"/>
         </Grid>
     </Grid>
 </Page>
