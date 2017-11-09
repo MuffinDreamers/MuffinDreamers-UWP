@@ -81,6 +81,15 @@ namespace Rat_App.View
 
         private void DateChanged(CalendarDatePicker sender, CalendarDatePickerDateChangedEventArgs args)
         {
+            if (datePickerEndDate.Date != null)
+            {
+                datePickerStartDate.MaxDate = datePickerEndDate.Date.Value;
+            }
+            if (datePickerStartDate.Date != null)
+            {
+                datePickerEndDate.MinDate = datePickerStartDate.Date.Value;
+            }
+
             if ((datePickerEndDate.Date != null) && (datePickerStartDate.Date != null))
             {
                 PopulateMap(from sighting in allSightings
