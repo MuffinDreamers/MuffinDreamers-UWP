@@ -58,7 +58,7 @@
 
             <TextBlock Grid.Row="0" Grid.Column="0" Text="Zipcode:" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,5"/>
             <TextBlock Grid.Row="0" Grid.Column="1" Text="City:" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="5,0,0,5"/>
-            <TextBox x:Name="textboxZipcode" Grid.Row="1" Grid.Column="0" VerticalAlignment="Top" Margin="0,0,5,0"/>
+            <TextBox x:Name="textboxZipcode" Grid.Row="1" Grid.Column="0" VerticalAlignment="Top" Margin="0,0,5,0" KeyDown="IntTextbox"/>
             <TextBox x:Name="textboxCity" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" Margin="5,0,0,0"/>
         </Grid>
 
@@ -79,8 +79,8 @@
 
             <TextBlock Grid.Row="0" Grid.Column="0" Text="Latitude:" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,5"/>
             <TextBlock Grid.Row="0" Grid.Column="1" Text="Longitude:" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="5,0,0,5"/>
-            <TextBox x:Name="textboxLatitude" Grid.Row="1" Grid.Column="0" VerticalAlignment="Top" Margin="0,0,5,0"/>
-            <TextBox x:Name="textboxLongitude" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" Margin="5,0,0,0"/>
+            <TextBox x:Name="textboxLatitude" Grid.Row="1" Grid.Column="0" VerticalAlignment="Top" Margin="0,0,5,0" TextChanging="DoubleTextBox"/>
+            <TextBox x:Name="textboxLongitude" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" Margin="5,0,0,0" TextChanging="DoubleTextBox"/>
         </Grid>
 
         <Grid Grid.Row="5">
