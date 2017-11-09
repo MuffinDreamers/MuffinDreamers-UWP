@@ -41,6 +41,6 @@
         <TextBlock x:Name="textLatitude" HorizontalAlignment="Center" FontFamily="Roboto" Text="{StaticResource latitudePreText}" Grid.Row="6" VerticalAlignment="Center"/>
         <TextBlock x:Name="textLongitude" HorizontalAlignment="Center" FontFamily="Roboto" Text="{StaticResource longitudePreText}" Grid.Row="7" VerticalAlignment="Center"/>
         <TextBlock x:Name="textDateCreated" HorizontalAlignment="Center" FontFamily="Roboto" Text="{StaticResource dateCreatedPreText}" Grid.Row="8" VerticalAlignment="Center"/>
-        <Button x:Name="buttonBack" HorizontalAlignment="Center" FontFamily="Roboto" Content="Return" Grid.Row="9" Click="buttonBack_Click"/>
+        <Button x:Name="buttonBack" HorizontalAlignment="Center" FontFamily="Roboto" Content="Return" Grid.Row="9" Click="buttonBack_Click" Width="100"/>
     </Grid>
 </Page>

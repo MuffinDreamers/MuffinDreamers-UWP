@@ -1,0 +1,95 @@
+﻿<Page
+    x:Class="Rat_App.View.AddSightingPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Rat_App.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <x:Double x:Key="buttonWidth">100</x:Double>
+    </Page.Resources>
+
+    <Grid Padding="15,0,15,0" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <RelativePanel Grid.Row="0">
+            <TextBlock RelativePanel.Above="comboBoxLocationType" Text="Location Type:" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <ComboBox x:Name="comboBoxLocationType" FontFamily="Roboto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" IsDropDownOpen="False" Margin="0,5,0,0" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True" MinWidth="133" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True">
+                <ComboBoxItem Content="1-2 Family Dweling"/>
+                <ComboBoxItem Content="3+ Family Apt. Building"/>
+                <ComboBoxItem Content="3+ Family Mixed Use Building"/>
+                <ComboBoxItem Content="Commercial Building"/>
+                <ComboBoxItem Content="Vacant Lot"/>
+                <ComboBoxItem Content="Construction Site"/>
+                <ComboBoxItem Content="Hospital"/>
+                <ComboBoxItem Content="Catch Basin/Sewer"/>
+            </ComboBox>
+        </RelativePanel>
+
+        <RelativePanel Grid.Row="1">
+            <TextBlock RelativePanel.Above="comboBoxBorough" Text="Borough:" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <ComboBox x:Name="comboBoxBorough" FontFamily="Roboto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" IsDropDownOpen="False" Margin="0,5,0,0" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True" MinWidth="133" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True">
+                <ComboBoxItem Content="Manhattan"/>
+                <ComboBoxItem Content="Staten Island"/>
+                <ComboBoxItem Content="Queens"/>
+                <ComboBoxItem Content="Brooklyn"/>
+                <ComboBoxItem Content="Bronx"/>
+            </ComboBox>
+        </RelativePanel>
+
+        <Grid Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="Zipcode:" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,5"/>
+            <TextBlock Grid.Row="0" Grid.Column="1" Text="City:" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="5,0,0,5"/>
+            <TextBox x:Name="textboxZipcode" Grid.Row="1" Grid.Column="0" VerticalAlignment="Top" Margin="0,0,5,0"/>
+            <TextBox x:Name="textboxCity" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" Margin="5,0,0,0"/>
+        </Grid>
+
+        <RelativePanel Grid.Row="3">
+            <TextBlock Text="Address:" RelativePanel.Above="textboxAddress"/>
+            <TextBox x:Name="textboxAddress" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True" Margin="0,5,0,0"/>
+        </RelativePanel>
+
+        <Grid Grid.Row="4">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="Latitude:" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,5"/>
+            <TextBlock Grid.Row="0" Grid.Column="1" Text="Longitude:" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="5,0,0,5"/>
+            <TextBox x:Name="textboxLatitude" Grid.Row="1" Grid.Column="0" VerticalAlignment="Top" Margin="0,0,5,0"/>
+            <TextBox x:Name="textboxLongitude" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" Margin="5,0,0,0"/>
+        </Grid>
+
+        <Grid Grid.Row="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="buttonAdd" Content="Add" Grid.Column="0" HorizontalAlignment="Center" Width="{StaticResource buttonWidth}" Click="buttonAdd_Click"/>
+            <Button x:Name="buttonCancel" Content="Cancel" Grid.Column="1" HorizontalAlignment="Center" Width="{StaticResource buttonWidth}" Click="buttonCancel_Click"/>
+        </Grid>
+    </Grid>
+</Page>

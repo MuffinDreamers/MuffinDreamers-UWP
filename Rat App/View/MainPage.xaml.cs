@@ -62,17 +62,17 @@ namespace Rat_App
 
         private void buttonAddNew_Click(object sender, RoutedEventArgs e)
         {
-
+            Frame.Navigate(typeof(AddSightingPage));
         }
 
         private void buttonGraph_Click(object sender, RoutedEventArgs e)
         {
-
+            //TODO Graph page
         }
 
         private void buttonMap_Click(object sender, RoutedEventArgs e)
         {
-
+            //TODO Map page
         }
 
         private void listViewSightings_ItemClick(object sender, ItemClickEventArgs e)
