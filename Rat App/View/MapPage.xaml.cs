@@ -71,12 +71,27 @@ namespace Rat_App.View
             Frame.Navigate(typeof(MainPage));
         }
 
-        protected override void OnNavigatedTo(NavigationEventArgs e)
+        protected override async void OnNavigatedTo(NavigationEventArgs e)
         {
             allSightings = (IEnumerable<Sighting>)e.Parameter;
 
             if (allSightings != null)
                 PopulateMap(allSightings);
+
+            GeolocationAccessStatus accessStatus = await Geolocator.RequestAccessAsync();
+
+            if (accessStatus == GeolocationAccessStatus.Allowed)
+            {
+                Geolocator geolocator = new Geolocator();
+
+                Geoposition position = await geolocator.GetGeopositionAsync();
+
+                if (position != null)
+                {
+                    mapSightings.Center = position.Coordinate.Point;
+                    mapSightings.ZoomLevel = 10;
+                }
+            }
         }
 
         private void DateChanged(CalendarDatePicker sender, CalendarDatePickerDateChangedEventArgs args)
