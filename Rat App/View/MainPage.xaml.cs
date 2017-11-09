@@ -42,7 +42,7 @@ namespace Rat_App
             Sighting[] sightings;
             using(StreamReader reader = new StreamReader(response.GetResponseStream()))
             {
-                sightings = Sighting.FromJson(reader.ReadToEnd());
+                sightings = Sighting.ArrayFromJson(reader.ReadToEnd());
             }
 
             progressRingSightings.IsActive = false;

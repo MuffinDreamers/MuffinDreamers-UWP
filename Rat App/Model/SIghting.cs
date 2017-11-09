@@ -49,7 +49,8 @@ namespace Rat_App
 
     public partial class Sighting
     {
-        public static Sighting[] FromJson(string json) => JsonConvert.DeserializeObject<Sighting[]>(json, Converter.Settings);
+        public static Sighting[] ArrayFromJson(string json) => JsonConvert.DeserializeObject<Sighting[]>(json, Converter.Settings);
+        public static Sighting FromJson(string json) => JsonConvert.DeserializeObject<Sighting>(json, Converter.Settings);
     }
 
     public static class Serialize
