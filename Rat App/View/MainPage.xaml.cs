@@ -16,6 +16,7 @@ using Windows.UI.Xaml.Navigation;
 using Newtonsoft.Json;
 using System.Diagnostics;
 using Rat_App.View;
+using System.Threading.Tasks;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -34,6 +35,9 @@ namespace Rat_App
 
         private async void PopulateListView()
         {
+            buttonGraph.IsEnabled = false;
+            buttonMap.IsEnabled = false;
+
             progressRingSightings.IsActive = true;
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create("http://muffindreamers.azurewebsites.net/sightings");
             request.ContentType = "application/json";
@@ -51,6 +55,9 @@ namespace Rat_App
             {
                 listViewSightings.Items.Add(s);
             }
+
+            buttonGraph.IsEnabled = true;
+            buttonMap.IsEnabled = true;
         }
 
         private async void buttonLogout_Click(object sender, RoutedEventArgs e)
@@ -67,12 +74,26 @@ namespace Rat_App
 
         private void buttonGraph_Click(object sender, RoutedEventArgs e)
         {
-            //TODO Graph page
+            Sighting[] sightings = new Sighting[listViewSightings.Items.Count()];
+
+            for (int i = 0; i < sightings.Length; i++)
+            {
+                sightings[i] = (Sighting)listViewSightings.Items[i];
+            }
+
+            Frame.Navigate(typeof(GraphPage), sightings);
         }
 
         private void buttonMap_Click(object sender, RoutedEventArgs e)
         {
-            //TODO Map page
+            Sighting[] sightings = new Sighting[listViewSightings.Items.Count()];
+
+            for(int i = 0; i < sightings.Length; i++)
+            {
+                sightings[i] = (Sighting)listViewSightings.Items[i];
+            }
+
+            Frame.Navigate(typeof(MapPage), sightings);
         }
 
         private void listViewSightings_ItemClick(object sender, ItemClickEventArgs e)

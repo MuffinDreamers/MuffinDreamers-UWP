@@ -28,7 +28,6 @@ namespace Rat_App.View
     /// </summary>
     public sealed partial class AddSightingPage : Page
     {
-        //TODO Fill info from GPS
         public AddSightingPage()
         {
             this.InitializeComponent();

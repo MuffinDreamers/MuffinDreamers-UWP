@@ -1,0 +1,38 @@
+﻿<Page
+    x:Class="Rat_App.View.GraphPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Rat_App.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Charting="using:WinRTXamlToolkit.Controls.DataVisualization.Charting"
+    xmlns:DataVisualization="using:WinRTXamlToolkit.Controls.DataVisualization"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="100"/>
+        </Grid.RowDefinitions>
+
+        <Charting:Chart x:Name="chartSightings">
+            <Charting:Chart.LegendStyle>
+                <Style TargetType="DataVisualization:Legend">
+                    <Setter Property="Width" Value="0"/>
+                </Style>
+            </Charting:Chart.LegendStyle>
+            <Charting:LineSeries IndependentValuePath="Month" DependentValuePath="Reports"/>
+        </Charting:Chart>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <CalendarDatePicker x:Name="datePickerStartDate" Grid.Column="0" HorizontalAlignment="Stretch" Margin="10,0" FontFamily="Roboto" PlaceholderText="Start Date" DateChanged="DateChanged"/>
+            <CalendarDatePicker x:Name="datePickerEndDate" Grid.Column="1" HorizontalAlignment="Stretch" Margin="10,0" FontFamily="Roboto" PlaceholderText="End Date" DateChanged="DateChanged"/>
+            <Button x:Name="buttonReturn" Grid.Column="2" Content="Return" HorizontalAlignment="Center" FontFamily="Roboto" Margin="10,0" Click="buttonReturn_Click"/>
+        </Grid>
+    </Grid>
+</Page>
