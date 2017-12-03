@@ -95,9 +95,14 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Auth0Users.cs" />
+    <Compile Include="Model\Credentials.cs" />
     <Compile Include="Model\Sighting.cs" />
     <Compile Include="View\AddSightingPage.xaml.cs">
       <DependentUpon>AddSightingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\AdminPage.xaml.cs">
+      <DependentUpon>AdminPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\GraphPage.xaml.cs">
       <DependentUpon>GraphPage.xaml</DependentUpon>
@@ -141,6 +146,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Page Include="View\AddSightingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\AdminPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

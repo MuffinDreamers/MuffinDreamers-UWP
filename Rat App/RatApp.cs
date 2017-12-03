@@ -8,6 +8,11 @@ using System.Threading.Tasks;
 using Auth0.OidcClient;
 using Auth0.ManagementApi;
 using IdentityModel.OidcClient;
+using System.Net.Http;
+using System.IO;
+using Rat_App.Model;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace Rat_App
 {
@@ -15,11 +20,12 @@ namespace Rat_App
     {
         private const string ClientId = "trq9MLo8GsyhnNe6iKDUIOBZrauB1cAD";
         private static RatApp INSTANCE = null;
-        User currentUser;
+
+        public static User currentUser { get; private set; }
 
         private RatApp() { }
 
-        public async Task<bool> LoginAsync()
+        public async Task<LoginResult> LoginAsync()
         {
             var client = new Auth0Client(new Auth0ClientOptions
             {
@@ -29,30 +35,18 @@ namespace Rat_App
 
             LoginResult loginResult = await client.LoginAsync();
 
+            currentUser = null;
+
             if (loginResult.IsError)
             {
                 Debug.WriteLine($"An error occured during login: {loginResult.Error}");
             }
             else
             {
-                string metadataUrl = "https://muffindreamers.auth0.com/api/v2/users/user_id?fields=user_metadata&include_fields=true";
-
-                string userID = loginResult.User.FindFirst(c => c.Type == "sub").Value;
-                userID = userID.Replace("auth0|", "");
-                string email = loginResult.User.FindFirst(c => c.Type == "name").Value;
-                string nickname = loginResult.User.FindFirst(c => c.Type == "nickname").Value;
-
-                currentUser = new User(userID, email, nickname);
-
-                Debug.WriteLine($"Successfully authenticated {email}");
-
-                foreach (var claim in loginResult.User.Claims)
-                {
-                    Debug.WriteLine($"{claim.Type} = {claim.Value}");
-                }
+                currentUser = await Auth0Users.GetUserAsync(loginResult.User.FindFirst(c => c.Type == "sub").Value);
             }
 
-            return !loginResult.IsError;
+            return loginResult;
         }
 
         public async Task<bool> LogoutAsync()

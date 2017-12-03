@@ -30,6 +30,16 @@ namespace Rat_App
         public MainPage()
         {
             this.InitializeComponent();
+            switch(RatApp.currentUser.Metadata.Role)
+            {
+                case User.Roles.Admin:
+                    buttonAdmin.Visibility = Visibility.Visible;
+                    break;
+                case User.Roles.User:
+                default:
+                    buttonAdmin.Visibility = Visibility.Collapsed;
+                    break;
+            }
             PopulateListView();
         }
 
@@ -101,6 +111,11 @@ namespace Rat_App
             Sighting sighting = (Sighting)e.ClickedItem;
 
             Frame.Navigate(typeof(SightingPage), sighting);
+        }
+
+        private void buttonAdmin_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(AdminPage));
         }
     }
 }

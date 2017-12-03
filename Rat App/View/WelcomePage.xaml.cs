@@ -16,6 +16,8 @@ using System.Diagnostics;
 using Windows.Foundation.Metadata;
 using Windows.UI.ViewManagement;
 using Windows.UI;
+using Windows.UI.Popups;
+using IdentityModel.OidcClient;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -45,10 +47,17 @@ namespace Rat_App
 
         private async void buttonLogin_Click(object sender, RoutedEventArgs e)
         {
-            bool success = await RatApp.GetInstance().LoginAsync();
+            LoginResult result = await RatApp.GetInstance().LoginAsync();
 
-            if (success)
+            if (!result.IsError)
                 Frame.Navigate(typeof(MainPage));
+            else
+            {
+                if (result.Error == "unauthorized")
+                    new MessageDialog("Your account has been banned").ShowAsync();
+                else
+                    new MessageDialog("There was an error authenticating your account").ShowAsync();
+            }
         }
     }
 }

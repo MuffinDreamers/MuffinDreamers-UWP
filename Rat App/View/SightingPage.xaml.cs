@@ -60,7 +60,7 @@ namespace Rat_App.View
 
         private void buttonBack_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(MainPage));
+            Frame.GoBack();
         }
     }
 }

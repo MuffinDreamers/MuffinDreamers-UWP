@@ -21,7 +21,7 @@
         </Grid.ColumnDefinitions>
         <ListView x:Name="listViewSightings" Grid.Row="0" IsItemClickEnabled="True" FontFamily="Roboto" FontSize="20" ItemClick="listViewSightings_ItemClick"/>
         <ProgressRing x:Name="progressRingSightings" Grid.Row="0" Width="100" Height="100"/>
-        <Grid Grid.Row="1" VerticalAlignment="Bottom">
+        <Grid Grid.Row="1" HorizontalAlignment="Center">
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
@@ -29,11 +29,13 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
+                <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Button x:Name="buttonLogout" Content="Logout" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" FontFamily="Roboto" Width="{StaticResource buttonWidth}" Margin="10" Click="buttonLogout_Click"/>
             <Button x:Name="buttonAddNew" Content="Add New" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" FontFamily="Roboto" Width="{StaticResource buttonWidth}" Margin="10" Click="buttonAddNew_Click"/>
             <Button x:Name="buttonGraph" Content="To Graph" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" FontFamily="Roboto" Width="{StaticResource buttonWidth}" Margin="10" Click="buttonGraph_Click"/>
             <Button x:Name="buttonMap" Content="To Map" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" FontFamily="Roboto" Width="{StaticResource buttonWidth}" Margin="10" Click="buttonMap_Click"/>
+            <Button x:Name="buttonAdmin" Content="Admin Panel" Grid.Row="0" Grid.Column="2" Grid.RowSpan="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="10" Visibility="Collapsed" Click="buttonAdmin_Click"/>
         </Grid>
     </Grid>
 </Page>

@@ -165,7 +165,7 @@ namespace Rat_App.View
 
         private void buttonCancel_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(MainPage));
+            Frame.GoBack();
         }
 
         private void IntTextbox(object sender, KeyRoutedEventArgs args)
