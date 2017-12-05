@@ -31,8 +31,12 @@ namespace Rat_App.View
         public AddSightingPage()
         {
             this.InitializeComponent();
+        }
 
-            AutoPopulate();
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            if (e.Parameter != null && (bool)e.Parameter)
+                AutoPopulate();
         }
 
         private async void AutoPopulate()
@@ -189,6 +193,11 @@ namespace Rat_App.View
                 sender.Text = sender.Text.Remove(pos, 1);
                 sender.SelectionStart = pos;
             }
+        }
+
+        private void buttonUseLocation_Click(object sender, RoutedEventArgs e)
+        {
+            AutoPopulate();
         }
     }
 }

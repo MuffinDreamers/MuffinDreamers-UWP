@@ -112,5 +112,10 @@ namespace Rat_App.View
                             select sighting);
             }
         }
+
+        private void buttonReportAtMyLocation_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(AddSightingPage), true);
+        }
     }
 }

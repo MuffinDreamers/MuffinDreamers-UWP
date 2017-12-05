@@ -83,13 +83,15 @@
             <TextBox x:Name="textboxLongitude" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" Margin="5,0,0,0" TextChanging="DoubleTextBox"/>
         </Grid>
 
-        <Grid Grid.Row="5">
+        <Grid Grid.Row="5" MaxWidth="500">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
             <Button x:Name="buttonAdd" Content="Add" Grid.Column="0" HorizontalAlignment="Center" Width="{StaticResource buttonWidth}" Click="buttonAdd_Click"/>
-            <Button x:Name="buttonCancel" Content="Cancel" Grid.Column="1" HorizontalAlignment="Center" Width="{StaticResource buttonWidth}" Click="buttonCancel_Click"/>
+            <Button x:Name="buttonUseLocation" Content="Use Location" Grid.Column="1" HorizontalAlignment="Center" Margin="10,0" Click="buttonUseLocation_Click"/>
+            <Button x:Name="buttonCancel" Content="Cancel" Grid.Column="2" HorizontalAlignment="Center" Width="{StaticResource buttonWidth}" Click="buttonCancel_Click"/>
         </Grid>
     </Grid>
 </Page>
